@@ -3,9 +3,24 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Strict mode za React - hvata potencijalne probleme ranije
   reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
+
+  // www -> kanonski domen bez www
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.pajatrava.rs" }],
+        destination: "https://pajatrava.rs/:path*",
+        permanent: true,
+      },
+    ];
+  },
 
   // Optimizacija slika - dodaj domene po potrebi
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       // Primer:
       // {
@@ -18,6 +33,10 @@ const nextConfig: NextConfig = {
   // Headers za bolju sigurnost
   async headers() {
     return [
+      {
+        source: "/api/(.*)",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
       {
         source: "/(.*)",
         headers: [

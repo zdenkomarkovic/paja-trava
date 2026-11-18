@@ -3,12 +3,14 @@ import { buildMetadata } from "@/lib/metadata";
 import { SITE_URL } from "@/lib/constants";
 import { IRRIGATION_EQUIPMENT } from "@/lib/pricing";
 import { IrrigationScheme } from "@/components/sections/IrrigationScheme";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { CtaBand, PageHero } from "@/components/sections/PageHero";
 
 export const metadata = buildMetadata({
-  title: "Zalivni sistemi i oprema",
+  title: "Automatski zalivni sistemi Hunter – projektovanje i ugradnja",
   description:
-    "Projektovanje i ugradnja automatskih zalivnih sistema Hunter, kapsule za zalivanje u zoni korena i oprema za zalivanje.",
+    "Projektovanje i ugradnja automatskih zalivnih sistema Hunter za dvorište: kapi po kap, rasprskivači, tajmeri i pametno zalivanje sa uštedom vode. Zatražite ponudu.",
   url: `${SITE_URL}/zalivni-sistemi`,
   image: "/IMG-20190919-WA0014.jpg",
 });
@@ -34,6 +36,14 @@ const equipment: Record<string, string> = {
 export default function ZalivniSistemiPage() {
   return (
     <main>
+      <JsonLd data={breadcrumbSchema([{ name: "Zalivni sistemi", path: "/zalivni-sistemi" }])} />
+      <JsonLd
+        data={serviceSchema(
+          "Projektovanje i ugradnja automatskih zalivnih sistema Hunter",
+          "Projektovanje i ugradnja automatskih zalivnih sistema Hunter za dvorišta, sa kompletnom opremom za zalivanje.",
+          "/zalivni-sistemi",
+        )}
+      />
       <PageHero
         eyebrow="Hunter® zalivni sistemi"
         title="Zalivni sistem je temelj zdravog vrta"

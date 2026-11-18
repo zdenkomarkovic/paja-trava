@@ -2,6 +2,8 @@ import { buildMetadata } from "@/lib/metadata";
 import { SITE_URL } from "@/lib/constants";
 import { MIN_JOB, PRICING, PRICING_INTRO } from "@/lib/pricing";
 import { SERVICE_DETAILS } from "@/lib/services";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import { CtaBand, PageHero } from "@/components/sections/PageHero";
 
 export const metadata = buildMetadata({
@@ -15,6 +17,7 @@ export const metadata = buildMetadata({
 export default function UslugePage() {
   return (
     <main>
+      <JsonLd data={breadcrumbSchema([{ name: "Usluge i cenovnik", path: "/usluge" }])} />
       <PageHero
         eyebrow="Usluge i cenovnik"
         title="Košenje trave, sadnja travnjaka, orezivanje žive ograde i uređenje dvorišta"

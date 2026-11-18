@@ -4,8 +4,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Gallery } from "@/components/sections/Gallery";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { Faq, FAQ, Process, Seasons, WhyUs } from "@/components/sections/HomeExtras";
-import { EMAIL, PHONE_DISPLAY, PHONE_TEL, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { EMAIL, PHONE_DISPLAY, PHONE_TEL, SITE_DESCRIPTION } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Košenje trave, uređenje dvorišta i zalivni sistemi",
@@ -27,19 +28,8 @@ const services = [
 export default function HomePage() {
   return (
     <main>
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: SITE_NAME,
-          url: SITE_URL,
-          telephone: PHONE_TEL,
-          email: EMAIL,
-          description: SITE_DESCRIPTION,
-          logo: `${SITE_URL}/logo.jpg`,
-          image: `${SITE_URL}/IMG-20190919-WA0013.jpg`,
-        }}
-      />
+      <JsonLd data={localBusinessSchema()} />
+      <JsonLd data={websiteSchema()} />
 
       <JsonLd
         data={{

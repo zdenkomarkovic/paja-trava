@@ -38,7 +38,8 @@ export function buildMetadata({
 }: BuildMetadataOptions = {}): Metadata {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
   const canonicalUrl = url ?? SITE_URL;
-  const ogImage = image ?? `${SITE_URL}/og-image.png`; // Dodaj og-image.png u /public
+  const absImage = (src: string) => (src.startsWith("http") ? src : `${SITE_URL}${src}`);
+  const ogImage = absImage(image ?? `${SITE_URL}/og-image.jpg`);
 
   return {
     // layout.tsx ima title.template, pa ovde ide naslov bez imena sajta
@@ -53,6 +54,7 @@ export function buildMetadata({
       description,
       url: canonicalUrl,
       siteName: SITE_NAME,
+      locale: "sr_RS",
       type,
       images: [
         {

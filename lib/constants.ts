@@ -1,7 +1,12 @@
 // Globalne konstante sajta
 
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+// Kanonski domen: u produkciji uvek https://pajatrava.rs (bez www), bez obzira na env.
+const PROD_URL = "https://pajatrava.rs";
+export const SITE_URL = (
+  process.env.NODE_ENV === "production"
+    ? PROD_URL
+    : (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000")
+).replace(/\/$/, "");
 
 export const SITE_NAME =
   process.env.NEXT_PUBLIC_SITE_NAME ?? "Paja Trava PR";
