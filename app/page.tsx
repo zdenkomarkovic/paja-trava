@@ -57,8 +57,8 @@ export default function HomePage() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-lime">
             Održavanje zelenih površina
           </p>
-          <h1 className="font-display max-w-3xl text-4xl font-semibold leading-tight sm:text-6xl">
-            Košenje trave, travnjaci i zalivni sistemi – uređenje i održavanje vašeg dvorišta
+          <h1 className="font-display max-w-3xl text-3xl font-semibold leading-tight sm:text-5xl">
+            <span className="font-bold text-lime">Paja Trava</span> - Košenje trave, travnjaci i zalivni sistemi – uređenje i održavanje vašeg dvorišta
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/85">
             Paja Trava PR: košenje trave, zasnivanje travnjaka, orezivanje žive ograde, sečenje

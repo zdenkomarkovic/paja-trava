@@ -4,6 +4,7 @@ import { MobileMenu } from "./MobileMenu";
 import { PHONE_DISPLAY, PHONE_TEL, SITE_NAME } from "@/lib/constants";
 
 const links = [
+  { href: "/", label: "Početna" },
   { href: "/usluge", label: "Usluge i cenovnik" },
   { href: "/zalivni-sistemi", label: "Zalivni sistemi" },
   { href: "/#galerija", label: "Galerija" },
