@@ -16,8 +16,20 @@ export function localBusinessSchema() {
     description: SITE_DESCRIPTION,
     logo: `${SITE_URL}/logo.jpg`,
     image: [`${SITE_URL}/og-image.jpg`, `${SITE_URL}/IMG-20190919-WA0013.jpg`],
-    address: { "@type": "PostalAddress", addressCountry: "RS" },
-    areaServed: { "@type": "Country", name: "Srbija" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Vladimira Hurbana 105",
+      addressLocality: "Stara Pazova",
+      postalCode: "22300",
+      addressCountry: "RS",
+    },
+    areaServed: [
+      { "@type": "City", name: "Beograd" },
+      { "@type": "City", name: "Zemun" },
+      { "@type": "City", name: "Novi Sad" },
+      { "@type": "City", name: "Stara Pazova" },
+      { "@type": "Country", name: "Srbija" },
+    ],
     priceRange: "$$",
     knowsLanguage: "sr",
     hasOfferCatalog: {
@@ -66,7 +78,7 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
   };
 }
 
-export function serviceSchema(name: string, description: string, path: string) {
+export function serviceSchema(name: string, description: string, path: string, city?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -74,6 +86,6 @@ export function serviceSchema(name: string, description: string, path: string) {
     description,
     url: `${SITE_URL}${path}`,
     provider: { "@id": BUSINESS_ID },
-    areaServed: { "@type": "Country", name: "Srbija" },
+    areaServed: city ? { "@type": "City", name: city } : { "@type": "Country", name: "Srbija" },
   };
 }

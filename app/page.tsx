@@ -6,6 +6,7 @@ import { Gallery } from "@/components/sections/Gallery";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { Faq, FAQ, Process, Seasons, WhyUs } from "@/components/sections/HomeExtras";
+import { LOCATIONS } from "@/lib/locations";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, SITE_DESCRIPTION } from "@/lib/constants";
 
 export const metadata = buildMetadata({
@@ -113,6 +114,26 @@ export default function HomePage() {
               <span className="block h-1 w-10 rounded bg-leaf transition-all group-hover:w-16" />
               <h3 className="font-display mt-4 text-xl font-semibold text-moss">{s.t}</h3>
               <p className="mt-2 text-sm text-ink/70">{s.d}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Gradovi */}
+      <section className="mx-auto max-w-6xl px-4 pb-20">
+        <h2 className="font-display text-3xl font-semibold text-moss sm:text-4xl">Radimo u Beogradu, Novom Sadu i širom Srbije</h2>
+        <p className="mt-3 max-w-2xl text-ink/70">
+          Sedište nam je u Staroj Pazovi, a na teren izlazimo u Beograd (uključujući Zemun), Novi Sad i druga mesta.
+        </p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {LOCATIONS.map((l) => (
+            <Link
+              key={l.slug}
+              href={`/${l.slug}`}
+              className="group rounded-2xl border border-moss/10 bg-white p-6 transition hover:-translate-y-1 hover:border-leaf hover:shadow-lg"
+            >
+              <h3 className="font-display text-xl font-semibold text-moss">Košenje trave i uređenje dvorišta {l.inCity}</h3>
+              <span className="mt-3 inline-block font-semibold text-moss group-hover:text-leaf">Saznajte više →</span>
             </Link>
           ))}
         </div>

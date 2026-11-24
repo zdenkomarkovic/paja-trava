@@ -4,12 +4,14 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { GALLERY } from "@/lib/pricing";
 
-export function Gallery() {
+type GalleryItem = { src: string; w: number; h: number; alt: string };
+
+export function Gallery({ items = GALLERY }: { items?: GalleryItem[] }) {
   const [open, setOpen] = useState<number | null>(null);
   const close = useCallback(() => setOpen(null), []);
   const step = useCallback(
     (d: number) =>
-      setOpen((i) => (i === null ? i : (i + d + GALLERY.length) % GALLERY.length)),
+      setOpen((i) => (i === null ? i : (i + d + items.length) % items.length)),
     [],
   );
 
@@ -24,12 +26,12 @@ export function Gallery() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, close, step]);
 
-  const current = open === null ? null : GALLERY[open];
+  const current = open === null ? null : items[open];
 
   return (
     <>
       <div className="columns-2 gap-3 md:columns-3 lg:columns-4 [&>button]:mb-3">
-        {GALLERY.map((g, i) => (
+        {items.map((g, i) => (
           <button
             key={g.src}
             type="button"

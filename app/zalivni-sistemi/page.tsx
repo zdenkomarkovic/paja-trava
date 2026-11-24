@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_URL } from "@/lib/constants";
-import { IRRIGATION_EQUIPMENT } from "@/lib/pricing";
+import { IRRIGATION_EQUIPMENT, IRRIGATION_GALLERY } from "@/lib/pricing";
+import { Gallery } from "@/components/sections/Gallery";
 import { IrrigationScheme } from "@/components/sections/IrrigationScheme";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
@@ -142,6 +143,16 @@ export default function ZalivniSistemiPage() {
             Cena se formira na osnovu broja prskalica, dužine rova i količine dodatne opreme. Pozovite nas ili
             pošaljite upit i dobićete ponudu prilagođenu vašem dvorištu.
           </p>
+        </div>
+      </section>
+
+      <section className="bg-sand py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="font-display text-3xl font-semibold text-moss">Zalivni sistemi u radu</h2>
+          <p className="mt-3 mb-8 max-w-2xl text-ink/75">
+            Primeri travnjaka sa automatskim zalivanjem. Kliknite na sliku da je uvećate.
+          </p>
+          <Gallery items={IRRIGATION_GALLERY} />
         </div>
       </section>
 

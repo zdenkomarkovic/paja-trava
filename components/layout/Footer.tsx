@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, SITE_NAME } from "@/lib/constants";
 import { PRICING } from "@/lib/pricing";
+import { LOCATIONS } from "@/lib/locations";
 
 const nav = [
   { href: "/", label: "Početna" },
@@ -65,12 +66,23 @@ export function Footer() {
                 Automatski zalivni sistemi
               </Link>
             </li>
+            {LOCATIONS.map((l) => (
+              <li key={l.slug}>
+                <Link href={`/${l.slug}`} className={linkCls}>
+                  Košenje trave {l.inCity}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div>
           <h2 className={headCls}>Kontakt</h2>
           <ul className="space-y-3">
+            <li>
+              <span className="block text-xs uppercase tracking-wider text-white/50">Adresa</span>
+              Vladimira Hurbana 105, Stara Pazova
+            </li>
             <li>
               <span className="block text-xs uppercase tracking-wider text-white/50">Telefon</span>
               <a href={`tel:${PHONE_TEL}`} className={`${linkCls} text-base font-semibold text-white`}>

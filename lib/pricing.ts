@@ -150,6 +150,15 @@ export const IRRIGATION_EQUIPMENT = [
   "Regulatori pritiska",
 ];
 
+export const IRRIGATION_GALLERY = [
+  { src: "/galerija/zalivanje-01.jpg", w: 288, h: 512, alt: "Rasprskivač zaliva travnjak pored popločane terase" },
+  { src: "/galerija/zalivanje-02.jpg", w: 288, h: 512, alt: "Automatski zalivni sistem u radu na travnjaku" },
+  { src: "/galerija/zalivanje-03.jpg", w: 1600, h: 769, alt: "Zalivanje pripremljenog zemljišta rasprskivačem" },
+  { src: "/galerija/zalivanje-04.jpg", w: 259, h: 194, alt: "Rasprskivači zalivaju travnjak sa ukrasnim žbunjem" },
+  { src: "/galerija/zalivanje-05.jpg", w: 275, h: 183, alt: "Rasprskivač za travnjak u radu" },
+  { src: "/galerija/zalivanje-06.jpg", w: 500, h: 375, alt: "Zalivni sistem sa rasprskivačem u uređenom dvorištu" },
+];
+
 export const GALLERY = [
   { src: "/IMG-20190919-WA0013.jpg", w: 1600, h: 739, alt: "Zasnovan travnjak ispred kuće" },
   { src: "/IMG-20190919-WA0014.jpg", w: 1600, h: 739, alt: "Travnjak postavljen busenom u dvorištu" },
@@ -162,4 +171,16 @@ export const GALLERY = [
   { src: "/IMG-20190921-WA0003.jpg", w: 739, h: 1600, alt: "Travnjak i ograda" },
   { src: "/IMG-20190921-WA0004.jpg", w: 739, h: 1600, alt: "Zasnovan travnjak u dvorištu" },
   { src: "/IMG-20190921-WA0005.jpg", w: 739, h: 1600, alt: "Dvorište sa novim travnjakom" },
+  { src: "/galerija/travnjak-02.jpg", w: 1600, h: 769, alt: "Travnjak postavljen busenom uz kuću" },
+  { src: "/galerija/travnjak-03.jpg", w: 1600, h: 769, alt: "Travnjak i popločana staza sa osvetljenjem u dvorištu" },
+  { src: "/galerija/travnjak-05.jpg", w: 1296, h: 728, alt: "Travnjak sa oblikovanim ukrasnim žbunjem" },
+  { src: "/galerija/travnjak-01.jpg", w: 1600, h: 769, alt: "Novi travnjak pored popločane staze" },
+  { src: "/galerija/vrt-01.jpg", w: 1600, h: 769, alt: "Uređen vrt sa cvetnim aranžmanima i travnjakom" },
+  { src: "/galerija/priprema-01.jpg", w: 1600, h: 769, alt: "Priprema zemljišta za travnjak uz betonsku ivicu" },
+  { src: "/galerija/priprema-02.jpg", w: 1600, h: 769, alt: "Isplanirano zemljište spremno za travnjak" },
+  { src: "/galerija/priprema-03.jpg", w: 1600, h: 769, alt: "Radovi na pripremi terena u novom dvorištu" },
+  { src: "/galerija/priprema-04.jpg", w: 1600, h: 769, alt: "Ravnanje zemljišta pre setve travnjaka" },
+  { src: "/galerija/priprema-05.jpg", w: 1600, h: 769, alt: "Pripremljena zemlja uz zid sa mladim drvećem" },
+  { src: "/galerija/priprema-06.jpg", w: 1600, h: 769, alt: "Pripremljeno zemljište za novi travnjak" },
+  ...IRRIGATION_GALLERY,
 ];
