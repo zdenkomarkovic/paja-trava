@@ -6,17 +6,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  // www -> kanonski domen bez www
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.pajatrava.rs" }],
-        destination: "https://pajatrava.rs/:path*",
-        permanent: true,
-      },
-    ];
-  },
+  // Preusmerenje apex <-> www radi Vercel (podrazumevana podešavanja domena), ne kod.
 
   // Optimizacija slika - dodaj domene po potrebi
   images: {

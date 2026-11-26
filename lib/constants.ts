@@ -1,7 +1,7 @@
 // Globalne konstante sajta
 
-// Kanonski domen: u produkciji uvek https://pajatrava.rs (bez www), bez obzira na env.
-const PROD_URL = "https://pajatrava.rs";
+// Kanonski domen: u produkciji uvek https://www.pajatrava.rs (Vercel podrazumevano preusmerava apex na www).
+const PROD_URL = "https://www.pajatrava.rs";
 export const SITE_URL = (
   process.env.NODE_ENV === "production"
     ? PROD_URL
